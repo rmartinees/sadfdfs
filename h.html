@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onunload="window.alert('Be sure to come back, OK?');">
+    <fieldset>
+        <legend>Choose a dinosaur:</legend>
+        <input type="radio" name="dino" id="dino_enigmo" value="Enigmosaurus">
+        <label for="dino_enigmo">The mysterious type</label>
+        <input type="radio" name="dino" id="dino_spino" value="Spinosaurus">
+        <label for="dino_spino">One with lots of backbone</label>
+        <input type="radio" name="dino" id="dino_xeno" value="Xenotarsosaurus">
+        <label for="dino_xeno">The unique name type</label>
+    </fieldset>
+    This HTML code has a set of radio buttons, all named dino. If you want to get all of these
+    elements, you could use the following code:
+
+    
+    <div id="div1">
+        What is 2+2?
+    </div>
+    <div id="div2">
+        <a href="answer.html" id="answer_link">Get the answer</a>
+    </div>
+
+
+
+
+    <script>
+        var web_page1 = "http://www.yahoo.com";
+        var b1 = document.getElementById("div1");
+        function hh () {
+            window.location = web_page1;
+        }
+        b1.addEventListener("click",hh , false);
+        b1.removeEventListener("click",hh,false);
+        var d1 = document.getElementById("div1");
+        var answer_link = document.getElementById("answer_link");
+        answer_link.onclick = function () {
+            d1.innerHTML = "That is easy, the answer is <strong>4</strong>!";
+            return false;
+        };
+
+        function sub_values(prev_value, next_value) {
+            document.writeln(prev_value + " " + -next_value);
+            return (prev_value - next_value);
+        }
+        const students = [];
+        var headingtext = "<h1>A Page of JavaScript</h1>";
+        var myintro = "Hello, welcome to my JavaScript page!";
+        students[0] = 99;
+        var linktag = "<a href=\"http://www.scripttheweb.com\">Link to a Site</a>" + students[0];
+        var redtext = "<span style=\"color:red\">I am so colorful today!</span>";
+        var begineffect = "<em>";
+        var endeffect = "</em>";
+        var beginpara = "<p>";
+        var endpara = "</p>";
+        document.write(headingtext);
+        document.write(begineffect + myintro + endeffect);
+        document.write(beginpara + linktag + endpara);
+        document.write(beginpara + redtext + endpara);
+
+
+        var nums = [2, 4, 8, 16, 32];
+        var the_result = nums.reduce(sub_values);
+
+        the_result = nums.reduceRight(sub_values);
+
+        var dino_radios = document.getElementsByName("dino");
+        const d2 = document.getElementsByTagName("div");
+        d2[1].onclick = function () {
+            window.alert(dino_radios.length + "-->" + dino_radios[0].nodeValue);
+        };
+    </script>
+</body>
+
+</html>
